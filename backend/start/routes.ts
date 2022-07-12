@@ -28,4 +28,6 @@ import Route from '@ioc:Adonis/Core/Route';
 
     Route.resource('/moments', 'MomentsController').apiOnly();
 
+    Route.post('/moments/:momentId/comments', 'CommentsController.store');
+
   }).prefix('/api');

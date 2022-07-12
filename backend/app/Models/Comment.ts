@@ -11,6 +11,9 @@ import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
     @column()
     public text: string;
 
+    @column()
+    public momentId: number;
+
     @column.dateTime({ autoCreate: true })
     public createdAt: DateTime;
 
