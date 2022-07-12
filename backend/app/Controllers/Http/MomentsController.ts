@@ -34,4 +34,14 @@ export default class MomentsController {
           }
     }
 
+    public async index({ response }: HttpContextContract) {
+      const moments = await Moment.all();
+
+        response.status(200);
+
+          return {
+            data: moments
+          }
+    }
+
 }
