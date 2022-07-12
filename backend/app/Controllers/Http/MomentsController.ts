@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Moment from 'App/Models/Moment';
 
 export default class MomentsController {
+
   private validationOptions = {
     types: ['image'],
     size: '20mb'
@@ -54,17 +55,48 @@ export default class MomentsController {
           }
     }
 
+    public async update({ request, response, params }: HttpContextContract) {
+      const body = request.body();
+      const moment = await Moment.findOrFail(params.id);
+
+        moment.title = body.title;
+        moment.description= body.description;
+
+          if(moment.image != body.image || !moment.image) {
+            const image = request.file('image', this.validationOptions);
+
+              if(image) {
+                const imageName = `${uuidv4()}.${image.extname}`;
+
+                  await image.move(Application.tmpPath('uploads'), {
+                    name: imageName
+                  });
+
+                    moment.image = imageName;
+              }
+          }
+
+            await moment.save();
+
+              response.status(201);
+
+                return {
+                  message: "Moment updated successfully!",
+                  data: moment
+                }
+    }
+
     public async destroy({ response, params }: HttpContextContract) {
       const moment = await Moment.findOrFail(params.id);
 
         await moment.delete();
 
-        response.status(201);
+          response.status(201);
 
-          return {
-            message: "Moment deleted successfully!",
-            data: moment
-          }
+            return {
+              message: "Moment deleted successfully!",
+              data: moment
+            }
     }
 
 }
