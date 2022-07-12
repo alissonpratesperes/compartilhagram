@@ -26,4 +26,6 @@ import Route from '@ioc:Adonis/Core/Route';
       return { hello: 'world' }
     });
 
+    Route.post('/moments', 'MomentsController.store');
+
   }).prefix('/api');
