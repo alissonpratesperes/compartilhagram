@@ -1,16 +1,23 @@
-<h2> Header </h2>
-
 <nav class="navigation_menu">
-  <ul class="navigation_list">
-    <li class="navigation_option">
-      <a class="navigation_link" routerLink="/">
-        Home
-      </a>
-    </li>
-    <li class="navigation_option">
-      <a class="navigation_link" routerLink="/about">
-        About
-      </a>
-    </li>
-  </ul>
+  <a routerLink="/">
+    <img src="./../../../assets/moments.png" alt="Moments Logo" title="Moments"/>
+      <h2> Moments </h2>
+  </a>
+    <ul class="navigation_list">
+      <li class="navigation_option">
+        <a class="navigation_link" routerLink="/">
+          Home
+        </a>
+      </li>
+      <li class="navigation_option" id="share_moment">
+        <a class="navigation_link" routerLink="moments/new">
+          Share
+        </a>
+      </li>
+      <li class="navigation_option">
+        <a class="navigation_link" routerLink="/about">
+          About
+        </a>
+      </li>
+    </ul>
 </nav>
