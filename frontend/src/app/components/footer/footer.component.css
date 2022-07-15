@@ -1,0 +1,17 @@
+footer.application_footer {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #DEC129;
+}
+
+footer.application_footer h3.footer_slogan {
+  margin-bottom: 1.2em;
+}
+
+footer.application_footer p.footer_copyrights span.copyright_detail {
+  color: #DEC129;
+  font-weight: bold;
+}

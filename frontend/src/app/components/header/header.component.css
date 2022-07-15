@@ -1,0 +1,44 @@
+nav.navigation_menu {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #777777;
+}
+
+nav.navigation_menu a.application_brand, nav.navigation_menu ul.navigation_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.navigation_menu a.application_brand img.application_image {
+  margin-right: 0.6em;
+  width: 40px;
+}
+
+nav.navigation_menu a.application_brand h2.application_name {
+  transition: 0.4s all;
+}
+
+nav.navigation_menu a.application_brand:hover > h2.application_name {
+  color: #DEC129;
+}
+
+nav.navigation_menu ul.navigation_list li.navigation_option {
+  margin-right: 1em;
+  list-style: none;
+}
+
+nav.navigation_menu ul.navigation_list li.navigation_option a {
+  padding: 0.1em 0.3em;
+}
+
+nav.navigation_menu ul.navigation_list li.navigation_option a#share_moment {
+  color: #DEC129;
+}
+
+nav.navigation_menu ul.navigation_list li.navigation_option a#share_moment:hover {
+  background-color: #EFEFEF;
+}
