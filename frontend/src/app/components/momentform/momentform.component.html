@@ -1,0 +1,23 @@
+<form class="moment_form">
+  <div class="form_group">
+    <label class="form_label" for="title">
+      Título:
+    </label>
+      <input class="form_input" type="text" placeholder="Coloque um título" required/>
+  </div>
+  <div class="form_group">
+    <label class="form_label" for="description">
+      Descrição:
+    </label>
+      <textarea class="form_description" placeholder="O que aconteceu lá?" required></textarea>
+  </div>
+  <div class="form_group">
+    <label class="form_label" for="image">
+      Coloque a foto que mais marcou:
+    </label>
+      <input class="form_input" type="file"/>
+  </div>
+  <div class="form_group">
+    <input class="form_input" type="submit" value="{{ buttonText }}"/>
+  </div>
+</form>

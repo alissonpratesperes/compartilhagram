@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewmomentComponent implements OnInit {
 
+  buttonText = 'Compartilhar!';
+
   constructor() { }
 
   ngOnInit(): void {

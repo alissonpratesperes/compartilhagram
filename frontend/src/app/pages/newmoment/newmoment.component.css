@@ -1,0 +1,9 @@
+h2.component_title {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 2.2em;
+}
+
+h2.component_title span.title_detail {
+  color: #DEC129;
+}
