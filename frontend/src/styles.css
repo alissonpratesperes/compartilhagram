@@ -56,3 +56,10 @@ form.moment_form div.form_group input.form_input[type=submit]:hover {
   border-color: #DEC129;
   background-color: transparent;
 }
+
+form.moment_form div.form_group div.validation_information p.validation_message {
+  margin-top: 0.4em;
+  padding-left: 0.2em;
+  color: #DC3545;
+  border-left: 3px solid #DC3545;
+}
