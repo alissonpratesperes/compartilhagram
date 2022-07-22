@@ -21,7 +21,7 @@
     <label class="form_label" for="image">
       Coloque a foto que mais marcou:
     </label>
-      <input class="form_input" type="file"/>
+      <input class="form_input" type="file" (change)="onFileSelected($event)"/>
   </div>
   <div class="form_group">
     <input class="form_input" type="submit" value="{{ buttonText }}"/>

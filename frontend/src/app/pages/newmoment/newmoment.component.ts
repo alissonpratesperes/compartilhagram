@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-newmoment',
-  templateUrl: './newmoment.component.html',
-  styleUrls: ['./newmoment.component.css']
-})
-export class NewmomentComponent implements OnInit {
+import { Moment } from '../../interfaces/Moment';
 
-  buttonText = 'Compartilhar!';
+  @Component({
+    selector: 'app-newmoment',
+    templateUrl: './newmoment.component.html',
+    styleUrls: ['./newmoment.component.css']
+  })
 
-  constructor() { }
+    export class NewmomentComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
+      buttonText = 'Compartilhar!';
 
-}
+        constructor() { }
+
+          ngOnInit(): void { }
+
+            async createHandler(moment: Moment) {
+              const momentData = new FormData();
+                momentData.append('title', moment.title);
+                momentData.append('description', moment.description);
+                  if(moment.image) {
+                    momentData.append('image', moment.image);
+                  }
+            }
+
+    }
