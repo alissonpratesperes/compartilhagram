@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Moment } from '../../interfaces/Moment';
 import { MomentService } from '../../services/moment.service';
+import { MessageService } from '../../services/message.service';
 
   @Component({
     selector: 'app-newmoment',
@@ -13,7 +14,8 @@ import { MomentService } from '../../services/moment.service';
       buttonText = 'Compartilhar!';
 
         constructor(
-          private momentService: MomentService
+          private momentService: MomentService,
+          private messageService: MessageService
         ) { }
 
           ngOnInit(): void { }
@@ -29,5 +31,7 @@ import { MomentService } from '../../services/moment.service';
                   }
 
                     await this.momentService.createMoment(momentData).subscribe();
+
+                      this.messageService.addMoment('Momento criado com sucesso!');
             }
     }

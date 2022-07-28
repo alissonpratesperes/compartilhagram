@@ -8,4 +8,16 @@ import { Injectable } from '@angular/core';
       message: string = '';
 
         constructor() { }
+
+          addMoment(message: string) {
+            this.message = message;
+
+              setTimeout(() => {
+                this.clear();
+              }, 5000);
+          }
+
+          clear() {
+            this.message = '';
+          }
     }

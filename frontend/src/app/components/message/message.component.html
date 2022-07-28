@@ -3,7 +3,7 @@
     <h2 class="message_title">
       Mensagem do Sistema:
     </h2>
-      <button class="message_dismiss">
+      <button class="message_dismiss" (click)="messageService.clear()">
         <fa-icon [icon]="faTimes"> </fa-icon>
       </button>
   </div>
