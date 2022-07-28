@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-@Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
-})
-export class MessageComponent implements OnInit {
-  faTimes = faTimes;
+import { MessageService } from '../../services/message.service';
 
-  constructor() { }
+  @Component({
+    selector: 'app-message',
+    templateUrl: './message.component.html',
+    styleUrls: ['./message.component.css']
+  })
 
-  ngOnInit(): void {
-  }
+    export class MessageComponent implements OnInit {
+      faTimes = faTimes;
 
-}
+      constructor(
+        public messageService: MessageService
+      ) { }
+
+      ngOnInit(): void {
+      }
+
+    }
