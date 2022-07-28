@@ -2,9 +2,30 @@
   <h1 class="home_title">
     Veja o que estão compartilhando...
   </h1>
-    <div class="" *ngFor="let moment of moments">
-      <h2>
-        {{ moment.title }}
-      </h2>
+    <div *ngIf="moments.length > 0; else noMoments">
+      <div class="moments_container">
+        <div class="moment_card" *ngFor="let moment of moments">
+          <img class="moment_image" src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="{{ moment.title }}">
+            <h3 class="moment_title">
+              {{ moment.title }}
+            </h3>
+              <p class="moment_date">
+                Em:
+                  {{ moment.created_at }}
+              </p>
+              <p class="moment_comments">
+                Comentários:
+                  {{ moment.comments!.length }}
+              </p>
+                <a class="moment_calltoaction" routerLink="/moments/{{ moment.id }}">
+                  Detalhes
+                </a>
+        </div>
+      </div>
     </div>
+      <ng-template #noMoments>
+        <h1 class="noMoments_text">
+          Não há Momentos cadastrados!
+        </h1>
+      </ng-template>
 </div>
