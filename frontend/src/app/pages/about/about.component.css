@@ -1,0 +1,19 @@
+div.about_container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.about_container h2.about_title {
+  margin-bottom: 1em;
+}
+
+div.about_container p.about_slogan {
+  margin-bottom: 1em;
+}
+
+div.about_container a.moment_link {
+  text-decoration: underline;
+}
