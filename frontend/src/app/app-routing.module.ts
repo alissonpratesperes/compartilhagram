@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { NewmomentComponent } from './pages/newmoment/newmoment.component';
+import { MomentComponent } from './pages/moment/moment.component';
 
   const routes: Routes = [
     {
@@ -17,6 +18,10 @@ import { NewmomentComponent } from './pages/newmoment/newmoment.component';
     {
       path: 'moments/new',
         component: NewmomentComponent
+    },
+    {
+      path: 'moments/:id',
+        component: MomentComponent
     }
   ];
 
