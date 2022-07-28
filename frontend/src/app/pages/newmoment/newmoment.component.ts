@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Moment } from '../../interfaces/Moment';
 import { MomentService } from '../../services/moment.service';
@@ -15,7 +16,8 @@ import { MessageService } from '../../services/message.service';
 
         constructor(
           private momentService: MomentService,
-          private messageService: MessageService
+          private messageService: MessageService,
+          private router: Router
         ) { }
 
           ngOnInit(): void { }
@@ -33,5 +35,7 @@ import { MessageService } from '../../services/message.service';
                     await this.momentService.createMoment(momentData).subscribe();
 
                       this.messageService.addMoment('Momento criado com sucesso!');
+
+                        this.router.navigate(['/']);
             }
     }
