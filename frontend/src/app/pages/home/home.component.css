@@ -49,3 +49,28 @@ div.home_container div.moments_container div.moment_card a.moment_calltoaction:h
   padding: 0.3em 0.6em 0.3em 0.6em;
   background-color: #EFEFEF;
 }
+
+div.home_container div.search_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+div.home_container div.search_container form.search_form {
+  width: 30%;
+  position: relative;
+}
+
+div.home_container div.search_container form.search_form fa-icon {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+
+div.home_container div.search_container form.search_form input.input_search {
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+}

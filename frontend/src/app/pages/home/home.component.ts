@@ -16,21 +16,33 @@ import { Moment } from '../../interfaces/Moment';
 
         allMoments: Moment[] = [];
         moments: Moment[] = [];
+        searchTerm: string = '';
 
-          constructor(
-            private momentService: MomentService
-          ) { }
+          faSearch = faSearch;
 
-            ngOnInit(): void {
-              this.momentService.getMoments().subscribe((items) => {
-                const data = items.data;
+            constructor(
+              private momentService: MomentService
+            ) { }
 
-                  data.map((item) => {
-                    item.created_at = new Date(item.created_at!).toLocaleDateString('pt-br');
+              ngOnInit(): void {
+                this.momentService.getMoments().subscribe((items) => {
+                  const data = items.data;
+
+                    data.map((item) => {
+                      item.created_at = new Date(item.created_at!).toLocaleDateString('pt-br');
+                    });
+
+                      this.allMoments = data;
+                      this.moments = data;
+                });
+              }
+
+              search(event: Event): void {
+                const target = event.target as HTMLInputElement;
+                const value = target.value;
+
+                  this.moments = this.allMoments.filter((moment) => {
+                    return moment.title.toLowerCase().includes(value);
                   });
-
-                    this.allMoments = data;
-                    this.moments = data;
-              });
-            }
+              }
     }
