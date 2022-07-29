@@ -1,0 +1,48 @@
+div.moment_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+div.moment_container h1.moment_title {
+  margin-bottom: 1em;
+}
+
+div.moment_container img.moment_image {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  max-width: 500px;
+}
+
+div.moment_container div.moment_about h3.about_title {
+  margin-bottom: 1em;
+}
+
+div.moment_container div.moment_about, div.moment_container div.actions_container {
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 1.2em;
+}
+
+div.moment_container div.actions_container h3.actions_options {
+  margin-bottom: 1em;
+}
+
+div.moment_container div.actions_container {
+  background-color: #EEEEEE;
+}
+
+div.moment_container div.comments_container {
+  padding: 1.5em 0em 1.5em 0em;
+  margin-bottom: 1em;
+}
+
+div.moment_container div.comments_container h3.comments_title {
+  margin-bottom: 1em;
+}

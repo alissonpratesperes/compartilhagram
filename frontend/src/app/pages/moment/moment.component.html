@@ -2,4 +2,31 @@
   <h1 class="moment_title">
     {{ moment.title }}
   </h1>
-</div>
+    <img class="moment_image" src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="{{ moment.title }}"/>
+      <div class="moment_about">
+        <h3 class="about_title">
+          Sobre este momento:
+        </h3>
+          <p class="about_description">
+            {{ moment.description }}
+          </p>
+      </div>
+      <div class="actions_container">
+        <h3 class="actions_options">
+          Ações:
+        </h3>
+          <a class="edit_action" routerLink="/moments/edit/{{ moment.id }}">
+            <fa-icon [icon]="faEdit"> </fa-icon>
+              Editar
+          </a>
+            <button class="remove_action">
+              <fa-icon [icon]="faTimes"> </fa-icon>
+                Excluir
+            </button>
+      </div>
+      <div class="comments_container">
+        <h3 class="comments_title">
+          Comentários (0):
+        </h3>
+      </div>
+  </div>

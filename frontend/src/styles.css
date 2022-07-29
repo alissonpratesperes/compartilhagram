@@ -63,3 +63,38 @@ form.moment_form div.form_group div.validation_information p.validation_message 
   color: #DC3545;
   border-left: 3px solid #DC3545;
 }
+
+.edit_action, .remove_action {
+  margin: 0em 0.5em 0em 0.5em;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+a fa-icon, button fa-icon {
+margin-right: 0.2em;
+}
+
+.edit_action, .edit_action path {
+  border-color: #007BFF;
+  color: #007BFF;
+}
+
+.edit_action:hover, .edit_action:hover path {
+  background-color: #007BFF;
+  color: #FFFFFF;
+}
+
+
+.remove_action, .remove_action path {
+  border-color: #DC3545;
+  color: #DC3545;
+}
+
+.remove_action:hover, .remove_action:hover path {
+  background-color: #DC3545;
+  color: #FFFFFF;
+}
