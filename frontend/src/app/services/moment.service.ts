@@ -14,21 +14,25 @@ import { environment } from '../../environments/environment';
       private baseApiUrl = environment.baseApiUrl;
       private apiUrl = `${this.baseApiUrl}/api/moments`;
 
-      constructor(
-        private http: HttpClient
-      ) { }
+        constructor(
+          private http: HttpClient
+        ) { }
 
-        getMoments(): Observable<Response<Moment[]>> {
-          return this.http.get<Response<Moment[]>>(this.apiUrl);
-        }
+          getMoments(): Observable<Response<Moment[]>> {
+            return this.http.get<Response<Moment[]>>(this.apiUrl);
+          }
 
-        getMoment(id: number): Observable<Response<Moment>> {
-          const url = `${this.apiUrl}/${id}`
-            return this.http.get<Response<Moment>>(url);
-        }
+          getMoment(id: number): Observable<Response<Moment>> {
+            const url = `${this.apiUrl}/${id}`;
+              return this.http.get<Response<Moment>>(url);
+          }
 
-        createMoment(momentData: FormData): Observable<FormData> {
-          return this.http.post<FormData>(this.apiUrl, momentData);
-        }
+          createMoment(momentData: FormData): Observable<FormData> {
+            return this.http.post<FormData>(this.apiUrl, momentData);
+          }
 
+          removeMoment(id: number) {
+            const url = `${this.apiUrl}/${id}`;
+              return this.http.delete(url);
+          }
     }
