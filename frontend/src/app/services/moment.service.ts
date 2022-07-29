@@ -23,8 +23,7 @@ import { environment } from '../../environments/environment';
           }
 
           getMoment(id: number): Observable<Response<Moment>> {
-            const url = `${this.apiUrl}/${id}`;
-              return this.http.get<Response<Moment>>(url);
+              return this.http.get<Response<Moment>>(this.apiUrl + '/' + id);
           }
 
           createMoment(momentData: FormData): Observable<FormData> {
@@ -32,7 +31,6 @@ import { environment } from '../../environments/environment';
           }
 
           removeMoment(id: number) {
-            const url = `${this.apiUrl}/${id}`;
-              return this.http.delete(url);
+              return this.http.delete(this.apiUrl + '/' + id);
           }
     }
