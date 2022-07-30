@@ -6,5 +6,5 @@
       </span>
     !
   </h2>
-    <app-momentform [momentData]="moment" [buttonText]="buttonText"> </app-momentform>
+    <app-momentform [momentData]="moment" [buttonText]="buttonText" (onSubmit)="editHandler($event)"> </app-momentform>
 </div>

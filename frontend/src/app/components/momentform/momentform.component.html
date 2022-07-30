@@ -1,29 +1,30 @@
 <form class="moment_form" (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
-  <div class="form_group">
-    <label class="form_label" for="title">
-      Título:
-    </label>
-      <input class="form_input" type="text" placeholder="Coloque um título" formControlName="title" required/>
-        <div class="validation_information" *ngIf="title.invalid && formDir.submitted">
-          <p class="validation_message" *ngIf="title.errors?.['required']"> O Título do Moment é obrigatório! </p>
-        </div>
-  </div>
-  <div class="form_group">
-    <label class="form_label" for="description">
-      Descrição:
-    </label>
-      <textarea class="form_description" placeholder="O que aconteceu lá?" formControlName="description" required></textarea>
-        <div class="validation_information" *ngIf="description.invalid && formDir.submitted">
-          <p class="validation_message" *ngIf="description.errors?.['required']"> A Descrição do Moment é obrigatória! </p>
-        </div>
-  </div>
-  <div class="form_group">
-    <label class="form_label" for="image">
-      Coloque a foto que mais marcou:
-    </label>
-      <input class="form_input" type="file" (change)="onFileSelected($event)"/>
-  </div>
-  <div class="form_group">
-    <input class="form_input" type="submit" value="{{ buttonText }}"/>
-  </div>
+  <input type="hidden" formControlName="id"/>
+    <div class="form_group">
+      <label class="form_label" for="title">
+        Título:
+      </label>
+        <input class="form_input" type="text" placeholder="Coloque um título" formControlName="title" required/>
+          <div class="validation_information" *ngIf="title.invalid && formDir.submitted">
+            <p class="validation_message" *ngIf="title.errors?.['required']"> O Título do Moment é obrigatório! </p>
+          </div>
+    </div>
+    <div class="form_group">
+      <label class="form_label" for="description">
+        Descrição:
+      </label>
+        <textarea class="form_description" placeholder="O que aconteceu lá?" formControlName="description" required></textarea>
+          <div class="validation_information" *ngIf="description.invalid && formDir.submitted">
+            <p class="validation_message" *ngIf="description.errors?.['required']"> A Descrição do Moment é obrigatória! </p>
+          </div>
+    </div>
+    <div class="form_group">
+      <label class="form_label" for="image">
+        Coloque a foto que mais marcou:
+      </label>
+        <input class="form_input" type="file" (change)="onFileSelected($event)"/>
+    </div>
+    <div class="form_group">
+      <input class="form_input" type="submit" value="{{ buttonText }}"/>
+    </div>
 </form>

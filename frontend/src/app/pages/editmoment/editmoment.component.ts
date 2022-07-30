@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Moment } from '../../interfaces/Moment';
 import { MomentService } from '../../services/moment.service';
+import { MessageService } from '../../services/message.service';
 
   @Component({
     selector: 'app-editmoment',
@@ -17,7 +18,9 @@ import { MomentService } from '../../services/moment.service';
 
           constructor(
             private momentService: MomentService,
-            private route: ActivatedRoute
+            private messageService: MessageService,
+            private route: ActivatedRoute,
+            private router: Router
           ) { }
 
             ngOnInit(): void {
@@ -27,4 +30,22 @@ import { MomentService } from '../../services/moment.service';
                   this.moment = item.data;
                 });
             }
+
+              async editHandler(formData: Moment) {
+                const id = this.moment.id;
+                const momentData = new FormData();
+
+                  momentData.append('title', formData.title);
+                  momentData.append('description', formData.description);
+
+                    if(formData.image) {
+                      momentData.append('image', formData.image);
+                    }
+
+                      await this.momentService.updateMoment(id!, momentData).subscribe();
+
+                        this.messageService.addMoment(`Momento ${id} atualizado com sucesso!`);
+
+                          this.router.navigate(['/']);
+              }
     }
