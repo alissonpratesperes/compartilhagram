@@ -26,7 +26,25 @@
       </div>
       <div class="comments_container">
         <h3 class="comments_title">
-          Comentários (0):
+          Comentários ({{ moment.comments!.length > 0 ? moment.comments!.length : 0 }}):
         </h3>
+          <div class="" *ngIf="moment.comments!.length > 0; else noComments">
+            <div class="comment_container" *ngFor="let comment of moment.comments">
+              <p class="comment_text">
+                {{ comment.text }}
+              </p>
+                <p class="comment_author">
+                  <span class="author_detail">
+                    Por:
+                  </span>
+                    {{ comment.username }}
+                </p>
+            </div>
+          </div>
+            <ng-template #noComments>
+              <p class="without_comments_text">
+                Não há comentários para este momento.
+              </p>
+            </ng-template>
       </div>
   </div>
