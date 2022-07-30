@@ -51,18 +51,24 @@
         <h3 class="comment_form_slogan">
           Deixe um comentário:
         </h3>
-          <form class="moment_form">
+          <form class="moment_form" [formGroup]="commentForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
             <div class="form_group">
               <label for="text">
                 Comentário:
               </label>
-                <textarea placeholder="O que você quer comentar?" required></textarea>
+                <textarea placeholder="O que você quer comentar?" formControlName="text" required></textarea>
+                <div class="validation_information" *ngIf="text.invalid && formDir.submitted">
+                  <p class="validation_message" *ngIf="text.errors?.['required']"> O Texto do Comment é obrigatório! </p>
+                </div>
             </div>
             <div class="form_group">
               <label for="username">
                 Autor:
               </label>
-                <input type="text" placeholder="Digite seu nome" required/>
+                <input type="text" placeholder="Digite seu nome" formControlName="username" required/>
+                <div class="validation_information" *ngIf="username.invalid && formDir.submitted">
+                  <p class="validation_message" *ngIf="username.errors?.['required']"> O Autor do Comment é obrigatório! </p>
+                </div>
             </div>
             <input type="submit" value="Comentar!" />
           </form>
