@@ -41,8 +41,38 @@ div.moment_container div.actions_container {
 div.moment_container div.comments_container {
   padding: 1.5em 0em 1.5em 0em;
   margin-bottom: 1em;
+  width: 100%;
 }
 
 div.moment_container div.comments_container h3.comments_title {
   margin-bottom: 1em;
+}
+
+div.moment_container div.comments_container {
+  padding: 1em 0em 1em 0em;
+  text-align: left;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+div.moment_container div.comments_container div.comment_container {
+  font-size: 0.9em;
+}
+
+div.moment_container div.comments_container div.comment_container p.comment_author {
+  font-size: 0.8em;
+}
+
+div.moment_container div.comment_form {
+  margin-bottom: 3em;
+}
+
+div.moment_container div.comment_form form.comment_form_input {
+  margin-left: 0em;
+  margin-top: 1em;
+  max-width: 300px;
+  text-align: left;
+}
+
+div.moment_container div.comments_container div.comment_container p.comment_author span.author_detail {
+  font-weight: bold;
 }

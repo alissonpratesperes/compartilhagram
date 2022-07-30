@@ -23,25 +23,25 @@ form.moment_form {
   width: 450px;
 }
 
-form.moment_form div.form_group {
+div.form_group {
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
 
-form.moment_form div.form_group label.form_label {
+div.form_group label.form_label {
   margin-bottom: 0.4em;
   font-size: 0.9em;
   font-weight: bold;
 }
 
-form.moment_form div.form_group input.form_input, form.moment_form div.form_group textarea.form_description {
+div.form_group input.form_input, form.moment_form div.form_group textarea.form_description {
   padding: 0.6em 0.6em 0.6em 0.6em;
   font-size: 0.8em;
   color: #777777;
 }
 
-form.moment_form div.form_group input.form_input[type=submit] {
+div.form_group input.form_input[type=submit] {
   padding: 0.6em 1em 0.6em 1em;
   background-color: #EFEFEF;
   border: 2px solid transparent;
@@ -51,13 +51,13 @@ form.moment_form div.form_group input.form_input[type=submit] {
   transition: 0.4s all;
 }
 
-form.moment_form div.form_group input.form_input[type=submit]:hover {
+div.form_group input.form_input[type=submit]:hover {
   color: #DEC129;
   border-color: #DEC129;
   background-color: transparent;
 }
 
-form.moment_form div.form_group div.validation_information p.validation_message {
+div.form_group div.validation_information p.validation_message {
   margin-top: 0.4em;
   padding-left: 0.2em;
   color: #DC3545;
