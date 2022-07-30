@@ -1,1 +1,10 @@
-<p>editmoment works!</p>
+<div class="moment_container" *ngIf="moment">
+  <h2 class="moment_title">
+    Editando o momento
+      <span class="title_detail">
+        {{ moment.title }}
+      </span>
+    !
+  </h2>
+    <app-momentform [momentData]="moment" [buttonText]="buttonText"> </app-momentform>
+</div>

@@ -1,0 +1,9 @@
+div.moment_container h2.moment_title {
+  margin-bottom: 1em;
+  font-size: 2.2em;
+  text-align: center;
+}
+
+div.moment_container h2.moment_title span.title_detail {
+  color: #DEC129;
+}

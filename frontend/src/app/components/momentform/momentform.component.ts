@@ -13,6 +13,7 @@ import { Moment } from '../../interfaces/Moment';
 
       @Output() onSubmit = new EventEmitter<Moment>()
       @Input() buttonText!: string;
+      @Input() momentData: Moment | null = null;
 
         momentForm!: FormGroup;
 
